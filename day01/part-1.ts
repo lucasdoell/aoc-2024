@@ -1,6 +1,5 @@
 const input = await Bun.file("day01/data.txt").text();
 
-// separate each input into its own list
 const leftList: number[] = [];
 const rightList: number[] = [];
 
@@ -17,3 +16,5 @@ Array.from({ length: leftList.length }).forEach(() => {
 
   distance += Math.abs(smallestLeft - smallestRight);
 });
+
+console.log("Distance: ", distance);
