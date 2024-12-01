@@ -1,0 +1,8 @@
+{
+  "supermaven.enable": {
+    "*": false
+  },
+  "github.copilot.enable": {
+    "*": false
+  }
+}
