@@ -8,11 +8,13 @@ input.split("\n").map((str) => {
   rightList.push(parseInt(str.substring(str.indexOf("   "))));
 });
 
+const sortedLeftList = leftList.sort((a, b) => b - a);
+const sortedRightList = rightList.sort((a, b) => b - a);
 let distance = 0;
 
 Array.from({ length: leftList.length }).forEach(() => {
-  const smallestLeft = leftList.sort((a, b) => b - a).pop()!;
-  const smallestRight = rightList.sort((a, b) => b - a).pop()!;
+  const smallestLeft = sortedLeftList.pop()!;
+  const smallestRight = sortedRightList.pop()!;
 
   distance += Math.abs(smallestLeft - smallestRight);
 });
