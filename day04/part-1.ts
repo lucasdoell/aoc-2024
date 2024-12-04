@@ -1,6 +1,5 @@
 const input = await Bun.file("day04/data.txt").text();
 const arr = input.split("\n");
-
 const grid = arr.map((row) => row.split(""));
 
 const directions = [
