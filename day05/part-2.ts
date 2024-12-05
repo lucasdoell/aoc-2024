@@ -25,8 +25,6 @@ updates.forEach((update) => {
   }
 });
 
-console.log(incorrectlyOrderedUpdates);
-
 incorrectlyOrderedUpdates.forEach((update) => {
   let correct = checkCorrectness(update);
   while (!correct) {
