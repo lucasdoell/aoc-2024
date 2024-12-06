@@ -26,8 +26,7 @@ updates.forEach((update) => {
 });
 
 incorrectlyOrderedUpdates.forEach((update) => {
-  let correct = checkCorrectness(update);
-  while (!correct) {
+  while (!checkCorrectness(update)) {
     const rule = failingRules[JSON.stringify(update)];
 
     const problemNum = rule[1];
@@ -36,8 +35,6 @@ incorrectlyOrderedUpdates.forEach((update) => {
 
     update.splice(afterIdx + 1, 0, problemNum);
     update.splice(problemIdx, 1);
-
-    correct = checkCorrectness(update);
   }
 });
 
