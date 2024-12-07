@@ -24,15 +24,10 @@ let traversed = 0;
 let guardInArea = true;
 
 while (guardInArea) {
-  if (direction === "up") {
-    traverse(0, -1);
-  } else if (direction === "right") {
-    traverse(1, 0);
-  } else if (direction === "down") {
-    traverse(0, 1);
-  } else {
-    traverse(-1, 0);
-  }
+  if (direction === "up") traverse(0, -1);
+  else if (direction === "right") traverse(1, 0);
+  else if (direction === "down") traverse(0, 1);
+  else traverse(-1, 0);
 }
 
 console.log("Amount of traversed squares: ", traversed);
