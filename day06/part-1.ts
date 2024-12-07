@@ -4,6 +4,8 @@ const map = arr.map((v) => v.split(""));
 
 const GUARD_POSITION = "^";
 const OBSTRUCTION = "#";
+const VISITED = "X";
+const UNVISITED = ".";
 
 type Direction = "left" | "right" | "up" | "down";
 let direction: Direction = "up";
@@ -53,10 +55,10 @@ function traverse(x: number, y: number) {
     currentPos = [currentPos[0] - x, currentPos[1] - y];
     turn();
   } else {
-    map[currentPos[1]][currentPos[0]] = "X";
+    map[currentPos[1]][currentPos[0]] = VISITED;
     currentPos = [currentPos[0] + x, currentPos[1] + y];
 
-    if (currentValue === "." || currentValue === "^") {
+    if (currentValue === UNVISITED || currentValue === GUARD_POSITION) {
       traversed += 1;
     }
   }
