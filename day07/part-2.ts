@@ -23,10 +23,10 @@ equations.forEach((equation) => {
   if (solvable) solvableEquations.push(equation);
 });
 
-let calibrationResult = 0;
-solvableEquations.forEach((eq) => {
-  calibrationResult += eq.testValue;
-});
+const calibrationResult = solvableEquations.reduce(
+  (sum, eq) => sum + eq.testValue,
+  0
+);
 
 console.log("Calibration result: ", calibrationResult);
 
